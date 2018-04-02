@@ -112,6 +112,11 @@ heapify(L,S,L):- 	Pi is S//2,
 
 %Extract Max-Deletion of top element from Priority Queue.
 
+xtractmax([X|[]],[],X):-	nl,write('Extracting Max element:'),
+							write(X),
+							show(node(X,nil,nil)),
+							write('******************************************************************').
+
 extractmax(Heap,Heap1,X):-	swaplast(Heap,L,X),
 							heapifytop(L,1,Heap1),
 							construct(Heap1,T),
